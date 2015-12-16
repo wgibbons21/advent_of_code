@@ -27,5 +27,5 @@ for j in range(0, 100):    #process pre-computed
         if contents[i][1] == 'OR' and contents[i][0] in dict and contents[i][2] in dict:
             dict[contents[i][4]] = int(dict[contents[i][0]]) | int(dict[contents[i][2]])
 
-print "\nValue of 'a' is", dict['a']
+print dict, "\nValue of 'a' is", dict['a']
 
