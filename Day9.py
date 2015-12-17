@@ -6,5 +6,5 @@ filehandle.close()
 
 for i in range(0, contents.__len__()):
     contents[i] = contents[i].split()
-    contents[i] = contents[i].
+    contents[i] = contents[i]
     print contents[i]
