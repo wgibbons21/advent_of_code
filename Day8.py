@@ -3,8 +3,8 @@ fileHandle = open('/Users/waltergibbons/Desktop/Day8.txt')
 
 contents = fileHandle.readlines()
 
-
 countChars = 0
+
 for i in range(0, contents.__len__()):
     contents[i] = contents[i].strip('\n')
     countChars += contents[i].__len__()
@@ -18,7 +18,7 @@ def processQuotes(line):
     return line
 
 for i in range(0,contents.__len__()):
-    print contents[i], "len= " ,contents[i].__len__()
+    print contents[i], "len= ", contents[i].__len__()
     contents[i] = processQuotes(contents[i])
     contents[i] = re.sub(r"\\x..", 'X', contents[i])
     print "", contents[i], " len= ", contents[i].__len__()
