@@ -9,14 +9,11 @@ uniqList = []
 
 for i in range(0, contents.__len__()):
     tempStr = str(contents[i]).split()
-
     tempStr.pop(1)
     tempStr.pop(2)
     #tempStr.pop(2)
     dict[str(tempStr[0] + tempStr[1])] = int(tempStr[2])
     dict[str(tempStr[1] + tempStr[0])] = int(tempStr[2])
-
-    #print(tempStr[0])
     contents[i] = tempStr
     if contents[i][0] not in uniqList:
         uniqList.append(contents[i][0])
