@@ -1,5 +1,5 @@
 import re
-fileHandle = open('/Users/waltergibbons/Desktop/input.txt')
+fileHandle = open('/Users/waltergibbons/Desktop/Day8.txt')
 
 contents = fileHandle.readlines()
 

@@ -1,32 +1,34 @@
 import re
-fileHandle = open('/Users/waltergibbons/Desktop/input.txt')
+fileHandle = open('/Users/waltergibbons/Desktop/Day8.txt')
 
 contents = fileHandle.readlines()
-
 countChars = 0
+length = len(contents)
 
-for i in range(0, contents.__len__()):
+for i in range(0, length):
     contents[i] = contents[i].strip('\n')
-    countChars += contents[i].__len__()
-    #print contents[i], contents[i].__len__()
+    countChars += len(contents[i])
 
 def processQuotes(line):
     #line = line.lstrip('"')
     #line = line.rstrip('"')
-    line = line.replace('""', 'QQ')
-    line = line.replace('\\"', 'QQQ')
-    line = line.replace('\\', 'SSS')
-    line = re.sub(r"\\x..", 'XXXXXXXXXXX', line)
+    print "Before", line, len(line)
+    line = line.replace('\"', 'QQ')
+    line = line.replace('"', 'QQQ')
+    line = line.replace('\\', 'SS')
+    #line = line.lstrip('"')
+    #line = line.rstrip('"')
+    print "After", line, len(line)
     return line
 
-for i in range(0,contents.__len__()):
-    print contents[i], "len= ", contents[i].__len__()
+for i in range(0, length):
+    #print contents[i], "len=", len(contents[i])
     contents[i] = processQuotes(contents[i])
-    print "", contents[i], " len= ", contents[i].__len__()
+    #print contents[i], "len=", len(contents[i])
 
 ctr = 0
-for i in range(0, contents.__len__()):
-    ctr += contents[i].__len__()
+for i in range(0, length):
+    ctr += len(contents[i]) + 2
 
 print "Begining Count:", countChars
 print "Total Count:", ctr
